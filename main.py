@@ -83,13 +83,13 @@ def derivada_log(a):
     
     #Função que calcula a derivada de f(x) = ln a
 def derivada_ln(a):
-    print(f"A derivada de f(x) = ln {a}")
+    print(f"A derivada de f(x) = ln({a})")
     print(f"f'(x) = 1/{a}")
     
     #Função que calcula a derivada de f(x) = a^x
 def derivada_exponencial(a):
     print(f"A derivada de f(x) = {a}^x")
-    print(f"f'(x) = {a}^x * ln {a}")
+    print(f"f'(x) = {a}^x * ln({a})")
 
     #Função que calcula a derivada de f(x) = e^x
 def derivada_exponencial_euler(n, tem_variavel):
@@ -103,29 +103,31 @@ def derivada_exponencial_euler(n, tem_variavel):
     #Função que calcula a derivada de f(x) = sen ax
 def derivada_sin(a, tem_variavel):
     if tem_variavel:
-        print(f"A derivada de f(x) = sen {a}x")
-        print(f"f'(x) = {a}cos {abs(a)}x")
+        print(f"A derivada de f(x) = sen({a}x)")
+        variavelAbs = abs(a) if a < 0 else a
+        print(f"f'(x) = {a}cos({variavelAbs}x)")
     else:
-        print(f"A derivada de f(x) = sen {a}")
+        print(f"A derivada de f(x) = sen({a})")
         print("f'(x) = 0")
         
     #Função que calcula a derivada de f(x) = cos ax
 def derivada_cos(a, tem_variavel):
     if tem_variavel:
-        print(f"A derivada de f(x) = cos {a}x")
+        print(f"A derivada de f(x) = cos({a}x)")
         if a < 0:
-            print(f"f'(x) = {a}sen {abs(a)}x")
+            print(f"f'(x) = {a}sen({abs(a)}x)")
         else:
-            print(f"f'(x) = -{a}sen {a}x")
+            print(f"f'(x) = -{a}sen({a}x)")
     else:
-        print(f"A derivada de f(x) = cos {a}")
+        print(f"A derivada de f(x) = cos({a})")
         print("f'(x) = 0")
         
     #Função que calcula a derivada de f(x) = tg ax
 def derivada_tg(a, tem_variavel):
         if tem_variavel:
-            print(f"A derivada de f(x) = tg {a}x")
-            print(f"f'(x) = {a}sec^2 {abs(a)}x")
+            print(f"A derivada de f(x) = tg ({a}x)")
+            variavelAbs = abs(a) if a < 0 else a
+            print(f"f'(x) = {a}sec^2 ({variavelAbs}x)")
         else:
             print(f"A derivada de f(x) = {a}")
             print("f'(x) = 0")
@@ -133,28 +135,28 @@ def derivada_tg(a, tem_variavel):
     #Função que calcula a derivada de f(x) = ctg ax
 def derivada_ctg(a, tem_variavel):
         if tem_variavel:
-            print(f"A derivada de f(x) = ctg {a}x")
-            print(f"f'(x) = {-a}csc^2 {abs(a)}x")
+            print(f"A derivada de f(x) = ctg({a}x)")
+            print(f"f'(x) = {-a}csc^2 ({abs(a)}x)")
         else:
-            print(f"A derivada de f(x) = ctg {a}")
+            print(f"A derivada de f(x) = ctg({a})")
             print("f'(x) = 0")
     
     #Função que calcula a derivada de f(x) = sec ax 
 def derivada_sec(a, tem_variavel):
         if tem_variavel:
-            print(f"A derivada de f(x) = sec {a}x")
+            print(f"A derivada de f(x) = sec({a}x)")
             print(f"f'(x) = {abs(a)}(tg {abs(a)}x * sec{abs(a)}x)")
         else:
-            print(f"A derivada de f(x) = sec {a}")
+            print(f"A derivada de f(x) = sec({a})")
             print("f'(x) = 0")
     
     #Função que calcula a derivada de f(x) = csc ax
 def derivada_csc(a, tem_variavel):
     if tem_variavel:
-        print(f"A derivada de f(x) = csc {a}x")
-        print(f"f'(x) = {-a}ctg {abs(a)}x * csc {abs(a)}x")
+        print(f"A derivada de f(x) = csc({a}x)")
+        print(f"f'(x) = {-a}ctg ({abs(a)}x) * csc ({abs(a)}x)")
     else:
-        print(f"A derivada de f(x) = csc {a}")
+        print(f"A derivada de f(x) = csc({a})")
         print("f'(x) = 0")
 
     #Função que calcula a derivada de f(x) = ax^n + bx + c
@@ -314,10 +316,8 @@ def main():
         continua = input("Deseja continuar?(S, N): ").strip().upper()
         if continua == 'S':
             os.system('cls' if os.name == 'nt' else 'clear')
-        
-        
-    
-    
+
 if __name__ == "__main__":
     main()
+
     
