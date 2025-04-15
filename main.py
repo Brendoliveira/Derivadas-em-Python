@@ -214,6 +214,7 @@ def main():
             case 0:
                 print()
                 print("Programa fechado")
+                return 0
             
             case 1:
                 a = digite_valor_a()
