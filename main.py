@@ -35,8 +35,29 @@ def derivada_x(a, tem_variavel):
     #Função que calcula a derivada de f(x) = ax^n
 
 def derivada_com_expoente(a, n):
+    aa = a * n;
+    nn = n - 1;
     print(f"A derivada de f(x) = {a}x^{n}")
-    print(f"f'(x) = {a * n}x^{n - 1}")
+    if nn == 1:
+        print(f"f'(x) = {aa}x")
+    elif nn == 0:
+        print(f"f'(x) = {aa}");
+    elif nn + 1 == 0:
+        print("f'(x) = 0");
+    else:
+        print(f"f'(x) = {aa}x^{nn}")
+        
+    aaa = aa * nn;
+    nnn = nn - 1;
+    if nnn == 1: 
+        print(f"f''(x) = {aaa}x")
+    elif nnn == 0:
+        print(f"f''(x) = {aaa}")
+    elif nnn + 2 == 0 or nnn == -1: 
+        print("f''(x) = 0")
+    else:
+        print(f"f''(x) = {aaa}x^{nnn}")
+    
     
     #Função que calcula a derivada de f(x) = √ax
 def derivada_raiz(a, tem_variavel):
@@ -299,3 +320,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
