@@ -40,9 +40,18 @@ def derivada_com_expoente(a, n):
     
     #Função que calcula a derivada de f(x) = √ax
 def derivada_raiz(a, tem_variavel):
+    numerador = 1
     if tem_variavel:
         print(f"A derivada de f(x) = √{a}x")
         print(f"f'(x) = 1 / (2√{a}) * {a}")
+        ehDivisivel = a % 2 == 0
+        if ehDivisivel:
+            numerador = a / 2
+            print(f"f'(x) = {numerador} / √{a}x")
+        else:
+            numerador *= a
+            print(f"f'(x) = {numerador} / 2√{a}x")
+            
     else:
         print(f"f'(x) = 1 / (2√{a})")
         
@@ -290,17 +299,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
