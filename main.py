@@ -5,7 +5,7 @@ def menu():
     #2 pontos é igual ao {} em C
     print("Escolha o tipo de função para calcular a derivada:")
     print("0. Fechar programa")
-    print("1. 1. Simples f(x) = ax")
+    print("1. Simples f(x) = ax")
     print("2. Regra da potência f(x) = ax^n")
     print("3. Regra de raiz quadrada f(x) = √(ax)")
     print("4. Logaritmo f(x) = log(a)")
